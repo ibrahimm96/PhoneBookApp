@@ -11,11 +11,12 @@
 		D70AE7552BC891620069097A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70AE7542BC891620069097A /* SceneDelegate.swift */; };
 		D70AE7572BC891620069097A /* PhoneBookMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70AE7562BC891620069097A /* PhoneBookMainViewController.swift */; };
 		D70AE75A2BC891620069097A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D70AE7592BC891620069097A /* Base */; };
-		D70AE75C2BC891620069097A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D70AE75B2BC891620069097A /* Assets.xcassets */; };
+		D70AE75C2BC891620069097A /* AssetsOriginal.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D70AE75B2BC891620069097A /* AssetsOriginal.xcassets */; };
 		D70AE75F2BC891620069097A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D70AE75E2BC891620069097A /* Base */; };
 		D70AE76A2BC891630069097A /* PhoneBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70AE7692BC891630069097A /* PhoneBookTests.swift */; };
 		D70AE7742BC891630069097A /* PhoneBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70AE7732BC891630069097A /* PhoneBookUITests.swift */; };
 		D70AE7762BC891630069097A /* PhoneBookUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70AE7752BC891630069097A /* PhoneBookUITestsLaunchTests.swift */; };
+		D70AE7832BC8A14A0069097A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D70AE7822BC8A14A0069097A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,7 @@
 		D70AE7542BC891620069097A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D70AE7562BC891620069097A /* PhoneBookMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBookMainViewController.swift; sourceTree = "<group>"; };
 		D70AE7592BC891620069097A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D70AE75B2BC891620069097A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D70AE75B2BC891620069097A /* AssetsOriginal.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AssetsOriginal.xcassets; sourceTree = "<group>"; };
 		D70AE75E2BC891620069097A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D70AE7602BC891620069097A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D70AE7652BC891630069097A /* PhoneBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoneBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +50,7 @@
 		D70AE76F2BC891630069097A /* PhoneBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoneBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70AE7732BC891630069097A /* PhoneBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBookUITests.swift; sourceTree = "<group>"; };
 		D70AE7752BC891630069097A /* PhoneBookUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBookUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D70AE7822BC8A14A0069097A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,8 @@
 				D70AE7542BC891620069097A /* SceneDelegate.swift */,
 				D70AE7562BC891620069097A /* PhoneBookMainViewController.swift */,
 				D70AE7582BC891620069097A /* Main.storyboard */,
-				D70AE75B2BC891620069097A /* Assets.xcassets */,
+				D70AE75B2BC891620069097A /* AssetsOriginal.xcassets */,
+				D70AE7822BC8A14A0069097A /* Assets.xcassets */,
 				D70AE75D2BC891620069097A /* LaunchScreen.storyboard */,
 				D70AE7602BC891620069097A /* Info.plist */,
 			);
@@ -231,7 +234,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D70AE75C2BC891620069097A /* Assets.xcassets in Resources */,
+				D70AE75C2BC891620069097A /* AssetsOriginal.xcassets in Resources */,
+				D70AE7832BC8A14A0069097A /* Assets.xcassets in Resources */,
 				D70AE75F2BC891620069097A /* Base in Resources */,
 				D70AE75A2BC891620069097A /* Base in Resources */,
 			);
@@ -450,6 +454,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,6 +483,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
