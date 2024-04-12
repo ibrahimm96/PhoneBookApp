@@ -35,7 +35,7 @@ class PhoneBookMainViewController: UIViewController{
         }
         
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        view.endEditing(true) 
+        view.endEditing(true)
     }
     
     func showAlert(message: String) {
