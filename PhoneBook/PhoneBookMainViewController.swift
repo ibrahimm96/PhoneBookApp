@@ -23,19 +23,18 @@ class PhoneBookMainViewController: UIViewController, CLLocationManagerDelegate {
         locationManager = CLLocationManager()
         locationManager?.requestWhenInUseAuthorization()
     }
-    
-
 
     @IBAction func textButtonTapped(_ sender: Any) {
         findCountry { country in
+            // For debugging purposes:
             if let country = country {
                 print("User is in \(country)")
-                // Perform additional actions based on the user's country
             } else {
                 print("Unable to determine user's country")
             }
             
-            if country != self.desiredCounty {
+            // Actual Code for deciding sms vs whatsApp
+            if country == self.desiredCounty {
                 self.openMessagesApp()
             } else {
                 self.openWhatsApp()
@@ -65,11 +64,10 @@ class PhoneBookMainViewController: UIViewController, CLLocationManagerDelegate {
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
-    
 }
 
 extension PhoneBookMainViewController{
-    
+    // For debugging purposes:
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
         case .notDetermined:
@@ -85,6 +83,7 @@ extension PhoneBookMainViewController{
         }
     }
     
+    // Core function for getting user location
     func findCountry(completion: @escaping (String?) -> Void) {
         guard let location = locationManager?.location else {
             print("Location not available")

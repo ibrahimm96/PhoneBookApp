@@ -17,13 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoA" translatesAutoresizingMaskIntoConstraints="NO" id="zu3-SC-Mte">
-                                <rect key="frame" x="55" y="77" width="92" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoA" translatesAutoresizingMaskIntoConstraints="NO" id="zu3-SC-Mte">
+                                <rect key="frame" x="50" y="79" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Nn1-ES-ZWH"/>
+                                    <constraint firstAttribute="height" constant="80" id="vfc-rH-OMQ"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="texpress your thoughts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxa-Vk-Wkr">
-                                <rect key="frame" x="146" y="102" width="164" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="texpress your thoughts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxa-Vk-Wkr">
+                                <rect key="frame" x="150" y="109" width="163.33333333333337" height="17"/>
                                 <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -36,9 +38,8 @@
                                     <action selector="textButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7v2-7B-vN2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Press the QR Code to open in Messages or whatsApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O67-mz-bZ8">
-                                <rect key="frame" x="83" y="567" width="227" height="10"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the QR Code to open in Messages or whatsApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O67-mz-bZ8">
+                                <rect key="frame" x="40" y="576" width="313" height="10"/>
                                 <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="10"/>
                                 <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                 <nil key="highlightedColor"/>
@@ -47,8 +48,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="zu3-SC-Mte" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="18V-wu-NTa"/>
+                            <constraint firstItem="wxa-Vk-Wkr" firstAttribute="leading" secondItem="zu3-SC-Mte" secondAttribute="trailing" constant="20" id="6Kp-Ka-8TH"/>
+                            <constraint firstItem="O67-mz-bZ8" firstAttribute="top" secondItem="qhZ-l9-cWa" secondAttribute="bottom" constant="25" id="BVb-gE-OVv"/>
                             <constraint firstItem="qhZ-l9-cWa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-641" id="DDy-So-rCl"/>
                             <constraint firstItem="qhZ-l9-cWa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="5" id="aCN-db-Kwu"/>
+                            <constraint firstItem="O67-mz-bZ8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="loy-4x-l89"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O67-mz-bZ8" secondAttribute="trailing" constant="40" id="mIf-EV-0es"/>
+                            <constraint firstItem="zu3-SC-Mte" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="w56-lj-gqq"/>
+                            <constraint firstItem="wxa-Vk-Wkr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="xOJ-S4-Eww"/>
                             <constraint firstItem="qhZ-l9-cWa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="yG5-Gc-4H9"/>
                         </constraints>
                     </view>
