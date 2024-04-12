@@ -17,7 +17,21 @@ class PhoneBookMainViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        findCountry { country in
+            if let country = country {
+                print("User is in \(country)")
+            } else {
+                print("Unable to determine user's country")
+            }
+        }
     }
+    
+
 
     @IBAction func textButtonTapped(_ sender: Any) {
         
@@ -30,9 +44,28 @@ class PhoneBookMainViewController: UIViewController, CLLocationManagerDelegate {
         present(alert, animated: true, completion: nil)
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        let geocoderLocation = CLGeocoder()
+    func findCountry(completion: @escaping (String?) -> Void) {
+        guard let location = locationManager.location else {
+            print("Location not available")
+            completion(nil)
+            return
+        }
+        
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location) { placemarks, error in
+            guard let placemark = placemarks?.first, error == nil else {
+                print("Reverse geocoding failed with error: \(error?.localizedDescription ?? "Unknown error")")
+                completion(nil)
+                return
+            }
+            
+            if let country = placemark.country {
+                completion(country)
+            } else {
+                print("Unable to determine user's country")
+                completion(nil)
+            }
+        }
     }
     
     func openMessagesApp() {
@@ -43,7 +76,7 @@ class PhoneBookMainViewController: UIViewController, CLLocationManagerDelegate {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
-    func openWhatsApp(phoneNumber: String) {
+    func openWhatsApp() {
         guard let url = URL(string: "whatsapp://send?phone=15103301270") else {
             showAlert(message: "Failed to open WhatsApp")
             return
