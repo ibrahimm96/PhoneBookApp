@@ -10,23 +10,22 @@ import CoreLocation
 
 class PhoneBookMainViewController: UIViewController, CLLocationManagerDelegate {
     
-    
-    private let locationManager = CLLocationManager()
+    var locationManager: CLLocationManager?
     @IBOutlet var openTextMessageButton: UIButton!
     var defaultPhoneNumber = "15103301270"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
         
         findCountry { country in
             if let country = country {
                 print("User is in \(country)")
+                // Perform additional actions based on the user's country
             } else {
                 print("Unable to determine user's country")
+                // Handle the case where the country couldn't be determined
             }
         }
     }
@@ -45,7 +44,7 @@ class PhoneBookMainViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func findCountry(completion: @escaping (String?) -> Void) {
-        guard let location = locationManager.location else {
+        guard let location = locationManager?.location else {
             print("Location not available")
             completion(nil)
             return
@@ -53,13 +52,22 @@ class PhoneBookMainViewController: UIViewController, CLLocationManagerDelegate {
         
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(location) { placemarks, error in
-            guard let placemark = placemarks?.first, error == nil else {
-                print("Reverse geocoding failed with error: \(error?.localizedDescription ?? "Unknown error")")
+            if let error = error {
+                print("Reverse geocoding failed with error: \(error.localizedDescription)")
                 completion(nil)
                 return
             }
             
+            guard let placemark = placemarks?.first else {
+                print("No placemark found")
+                completion(nil)
+                return
+            }
+            
+            print("Placemark: \(placemark)")
+            
             if let country = placemark.country {
+                print("Country: \(country)")
                 completion(country)
             } else {
                 print("Unable to determine user's country")
@@ -67,6 +75,7 @@ class PhoneBookMainViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
     }
+
     
     func openMessagesApp() {
         guard let url = URL(string: "sms::15103301270") else {
@@ -85,6 +94,24 @@ class PhoneBookMainViewController: UIViewController, CLLocationManagerDelegate {
     }
     
 }
+
+extension PhoneBookMainViewController {
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .notDetermined:
+            print("When user did not yet determined")
+        case .restricted:
+            print("Restricted by parental control")
+        case .denied:
+            print("When user select option Dont't Allow")
+        case .authorizedWhenInUse:
+            print("When user select option Allow While Using App or Allow Once")
+        default:
+            print("default")
+        }
+    }
+}
+
     
 
 
